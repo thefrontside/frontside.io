@@ -136,6 +136,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-44597640-1'
+      }
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         query: `
@@ -145,7 +151,7 @@ module.exports = {
                 siteUrl
               }
             }
-  
+
             allSitePage {
               edges {
                 node {
