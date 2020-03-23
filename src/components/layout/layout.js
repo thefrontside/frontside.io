@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { StaticQuery, graphql } from 'gatsby';
 
 import './layout.css';
+import '../_variables.css';
 import "syntax-highlighting/assets/css/prism/prism-base16-ateliersulphurpool.light.css";
 
 import Navbar from '../navbar';

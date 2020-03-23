@@ -1,5 +1,3 @@
-@import '../variables';
-
 .content-container {
   padding: var(--space-half-vw);
   box-sizing: content-box;

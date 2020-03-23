@@ -1,13 +1,10 @@
-@import '../variables';
-
 .testimonials {
   list-style: none;
   margin-top: var(--space-triple);
 
   @media (--large-up) {
-    $overlap: calc(-1 * var(--space-single));
-    margin-left: $overlap;
-    margin-right: $overlap;
+    margin-left: calc(-1 * var(--space-single));
+    margin-right: calc(-1 * var(--space-single));
   }
 }
 

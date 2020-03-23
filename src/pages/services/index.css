@@ -1,5 +1,3 @@
-@import '../../components/variables';
-
 .service-thumb {
   @media (--up-small) {
     display: flex;

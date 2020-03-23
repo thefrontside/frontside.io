@@ -18,17 +18,6 @@ module.exports = {
   plugins: [
     'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-postcss',
-      options: {
-        postCssPlugins: [
-          require('autoprefixer'),
-          require('precss'),
-          require('postcss-color-function'),
-          require('postcss-calc'),
-        ],
-      },
-    },
-    {
       // keep as first gatsby-source-filesystem plugin for gatsby image support
       resolve: 'gatsby-source-filesystem',
       options: {

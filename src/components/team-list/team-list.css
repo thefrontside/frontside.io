@@ -1,5 +1,3 @@
-@import '../variables';
-
 .team-list {
   margin: var(--space-triple) calc(-1 * var(--space-single)) 0;
   list-style: none;

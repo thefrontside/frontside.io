@@ -1,12 +1,9 @@
-@import '../variables';
-
 .home-logos {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  $margin: calc(-1 * var(--space-single));
-  margin: var(--space-double) $margin $margin;
+  margin: var(--space-double) calc(-1 * var(--space-single)) calc(-1 * var(--space-single));
 }
 
 .home-logo {
