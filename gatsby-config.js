@@ -16,6 +16,8 @@ module.exports = {
     'SimplecastEpisode.fields.authors': 'MarkdownRemark',
   },
   plugins: [
+    `gatsby-plugin-typescript`,
+    `gatsby-plugin-styled-components`,
     'gatsby-plugin-react-helmet',
     {
       // keep as first gatsby-source-filesystem plugin for gatsby image support

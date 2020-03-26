@@ -10,6 +10,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.8.1",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "autoprefixer": "^9.7.4",
+    "babel-plugin-styled-components": "^1.10.7",
     "classnames": "^2.2.6",
     "dateformat": "3.0.3",
     "gatsby": "^2.4.0",
@@ -22,6 +23,8 @@
     "gatsby-plugin-react-helmet": "^3.1.22",
     "gatsby-plugin-sharp": "^2.4.5",
     "gatsby-plugin-sitemap": "2.2.27",
+    "gatsby-plugin-styled-components": "^3.2.0",
+    "gatsby-plugin-typescript": "^2.3.0",
     "gatsby-remark-copy-linked-files": "^2.1.37",
     "gatsby-remark-images": "^3.1.44",
     "gatsby-remark-prismjs": "^3.3.31",
@@ -41,6 +44,9 @@
     "react-helmet": "^5.2.1",
     "react-transition-group": "^4.3.0",
     "rimraf": "^3.0.2",
+    "styled-components": "^5.0.1",
+    "styled-reset-advanced": "^1.0.3",
+    "styled-system": "^5.1.5",
     "syntax-highlighting": "^1.0.0",
     "uuid": "^3.4.0"
   },
@@ -63,5 +69,9 @@
     "format": "prettier --trailing-comma es5 --single-quote --write \"{gatsby-*.js,src/**/*.js}\"",
     "test": "echo \"Error: no test specified\" && exit 1",
     "verify-sitemap": "./lib/verify-sitemap/index.js"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.0.1",
+    "@types/styled-system": "^5.1.9"
   }
 }
