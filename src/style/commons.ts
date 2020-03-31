@@ -47,7 +47,7 @@ export const frontsideCommons: Commons = {
     heading: 1.25,
   },
   space: [0, 0.3819, 0.6118, 1, 1.6103, 2.618, 4.236, 6.8541].map(n => n + 'rem'),
-  sizes: [1280]
+  sizes: [1280] //We keep this in pixels as number because it is used for layout calculations
 };
 
 const breakpointAliases: string[] = ['small', 'medium', 'large', 'xLarge'];

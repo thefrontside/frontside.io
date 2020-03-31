@@ -1,11 +1,19 @@
 import React from "react";
+import styled from 'styled-components';
 import Layout from "../../components/layout";
-import Hero from "../../components/hero";
 import Content from "../../components/content";
 import Text from "../../components/text";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight, faComment } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'gatsby';
+
+import Box from "../../components/Box";
+import Hero from "../../components/Hero";
+import { H1, H2 } from '../../components/Headings';
+import { FullRow, FullColumn } from '../../components/FullLayout';
+import { DeliveryPipelineIcon, ParallelizationIcon, ArchitectureIcon } from '../../components/Icons';
+
+import Section from '../../components/Section';
 
 import illya from "../../img/illya-busigin.jpg";
 import benji from "../../img/benji-shine.jpg";
@@ -18,20 +26,130 @@ import logoEbsco from '../../img/clients/ebsco-logo.svg';
 import logoSxsw from '../../img/clients/sxsw-logo.svg';
 import logoStandard from '../../img/clients/standard-chartered-logo.svg';
 
-import './index.css';
+import PlatformIcon from '../../img/custom-icons/platform-icon.svg';
+
+const ServiceIcon = styled.div`
+  color: ${({ theme }) => theme.colors.contrast};
+  width: 100%;
+  max-width: 130px;
+`;
+
+const IconColumn = styled(FullColumn)`
+  display: flex;
+  flex-flow: column nowrap;
+  text-align: center;
+  align-items: center;
+
+  ${ServiceIcon} {
+    order: 1;
+  }
+  ${H2} {
+    order: 2;
+  }
+
+`;
+
+const ServiceText = styled(Text)`
+  /* max-width: 600px; */
+`;
+
+const DeliveryIconColumn = styled(IconColumn)`
+  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+    padding-top: ${({ theme }) => theme.space.xxLarge};
+    padding-bottom: ${({ theme }) => theme.space.xxLarge};
+  }
+`;
+
+const DeliveryH2 = styled(H2)`
+  margin: ${({ theme }) => theme.space.medium} 0 0 0;
+`;
 
 export default function Services() {
   return (
     <Layout>
-      <Hero
-        heading={
-          <Text>
-            We bring deep expertise in engineering to realize your teams' full potential.
+      <Hero>
+        <Box width={[1, 1, 1, 2/3]}>
+          <H1>
+            We provide services to teams experiencing the challenges of software at scale
+          </H1>
+          <Text fontSize="large">
+            Through extensive research and decades of experience, we have designed patterns and strategies that bring sustainable engineering growth across organizations.
           </Text>
-        }
-      />
+        </Box>
+      </Hero>
 
-      <Content>
+      <FullRow>
+        <DeliveryIconColumn as='header' largeWidth={1/3} backgroundColor='subtleBackground'>
+          <DeliveryH2>
+            Delivery Pipeline <br /> Optimization
+          </DeliveryH2>
+          <ServiceIcon>
+            <DeliveryPipelineIcon />
+          </ServiceIcon>
+        </DeliveryIconColumn>
+        <FullColumn largeWidth={2/3} backgroundColor='subtleBackground'>
+          <ServiceText>
+            The time it takes you to incorporate customer feedback and industry trends into production is critical. We help teams develop processes and provide them with custom-tailored tooling so they can deliver quality software consistently. 
+          </ServiceText>
+          <Link to='/'>
+            How we help teams ship great applications
+          </Link>
+        </FullColumn>
+      </FullRow>
+
+      <FullRow>
+        <FullColumn largeWidth={1/3} backgroundColor='primary' as='aside'>
+          <Text>
+            We don’t give abstract advice to our clients: we work with them to achieve their goals and make sure they can continue thriving after our engagement.
+          </Text>
+          <Link to='/'>
+            Learn about Our Approach
+          </Link>
+        </FullColumn>
+        <FullColumn largeWidth={2/3}>
+          <H2>
+            Development Parallelization
+          </H2>
+          <ServiceIcon>
+            <ParallelizationIcon />
+          </ServiceIcon>
+          <ServiceText>
+            Frontend teams blocked by backend features is a common problem that slows down organizations. Making sure every team is effective in doing meaningful work can play a crucial role in deliveries and talent retention. We specialize in making teams move smoothly through contract management, simulation, and automated visibility.
+          </ServiceText>
+          <Link to='/'>
+            How we speed up teams through decoupling
+          </Link>
+        </FullColumn>
+      </FullRow>
+
+      <FullRow>
+        <FullColumn largeWidth={2/3} backgroundColor='subtleBackground' columnOrder={2}>
+          <H2>
+            Architecture for new technologies 
+          </H2>
+          <ServiceIcon>
+            <ArchitectureIcon />
+          </ServiceIcon>
+          <ServiceText>
+            Cutting-edge technologies can bring competitive advantages but also introduce a higher risk on the project. It is essential not to compromise in quality or software durability when choosing new tools and libraries. We help you architect your software to minimize risk and empower your team for experimentation.
+          </ServiceText>
+          <Link to='/'>
+            How we future-proof projects using new technologies
+          </Link>
+        </FullColumn>
+        <FullColumn largeWidth={1/3} backgroundColor='contrast' as='aside' columnOrder={1}>
+          <Text>
+            We are a boutique engineering studio with decades of experience pushing the boundaries of the web in partnership with large organizations.
+          </Text>
+          <Link to='/'>
+            Why choose Frontside
+          </Link>
+        </FullColumn>
+        
+        
+      </FullRow>
+
+      {/* <Content>
         <Text tag="p">
         We help organizations architect and implement long lasting platforms at scale. Our leadership will provide you with a robust toolkit and optimized workflow so your teams can deliver features with confidence.
         </Text>
@@ -232,7 +350,7 @@ export default function Services() {
             </blockquote>
           </aside>
         </div>
-      </Content>
+      </Content> */}
     </Layout>
   );
 }

@@ -1,18 +1,22 @@
 import styled from 'styled-components';
-import { compose, color, typography } from 'styled-system';
+import StyledSystem, { compose, color, typography } from 'styled-system';
 
-const Text = styled.p`
+export interface TextProps extends StyledSystem.ColorProps, StyledSystem.TypographyProps {
+  as?: React.ElementType;
+}
+
+const Text = styled.p<TextProps>`
   font-size: ${({ theme }) => theme.fontSizes.medium};
   margin-bottom: ${({ theme }) => theme.space.medium};
   ${compose(color, typography)}
 `;
 
-export const Strong = styled.strong`
+export const Strong = styled.strong<TextProps>`
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   ${compose(color, typography)}
 `;
 
-export const Emphasis = styled.em`
+export const Emphasis = styled.em<TextProps>`
   font-style: italic;
   ${compose(color, typography)}
 `;
