@@ -1,11 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import Section from './Section';
-
-// const HeroLine = styled.section`
-//   border-left: 9px solid ${({ theme }) => theme.colors.brand.darkBlue};
-//   padding: ${({ theme }) => theme.space.medium} 0;
-// `;
+import React from "react";
+import styled from "styled-components";
+import Section from "./Section";
 
 export const HeroLink = styled.a`
   display: inline-block;
@@ -15,7 +10,12 @@ export const HeroLink = styled.a`
 `;
 
 const Hero: React.FC = ({ children }) => (
-    <Section marginTop={['large', 'xLarge', 'xxLarge']} marginBottom={['large', 'xLarge', 'xxLarge']}>{children}</Section>
+  <Section
+    marginTop={["large", "xLarge", "xxLarge"]}
+    marginBottom={["large", "xLarge", "xxLarge"]}
+  >
+    {children}
+  </Section>
 );
 
 export default Hero;

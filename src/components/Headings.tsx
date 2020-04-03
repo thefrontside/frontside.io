@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const H1 = styled.h1`
   font-family: ${({ theme }) => theme.fonts.heading};
@@ -10,7 +10,8 @@ export const H1 = styled.h1`
 `;
 
 export const H2 = styled.h2`
-  color: ${({ color, theme }) => (color ? theme.colors[color] : theme.colors.primary)};
+  color: ${({ color, theme }) =>
+    color ? theme.colors[color] : theme.colors.primary};
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: ${({ theme }) => theme.fontWeights.body};
   font-size: ${({ theme }) => theme.fontSizes.large};
@@ -19,7 +20,8 @@ export const H2 = styled.h2`
 `;
 
 export const H3 = styled.h3`
-  color: ${({ color, theme }) => (color ? theme.colors[color] : theme.colors.primary)};
+  color: ${({ color, theme }) =>
+    color ? theme.colors[color] : theme.colors.primary};
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.medium};
@@ -28,7 +30,8 @@ export const H3 = styled.h3`
 `;
 
 export const H4 = styled.h4`
-  color: ${({ color, theme }) => (color ? theme.colors[color] : theme.colors.primary)};
+  color: ${({ color, theme }) =>
+    color ? theme.colors[color] : theme.colors.primary};
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.small};

@@ -1,7 +1,6 @@
-import styled from 'styled-components';
-import StyledSystem, { color } from 'styled-system';
-import { Theme } from '../style/themes';
-
+import styled from "styled-components";
+import StyledSystem, { color } from "styled-system";
+import { Theme } from "../style/themes";
 
 export const FullRow = styled.section`
   display: flex;
@@ -9,7 +8,7 @@ export const FullRow = styled.section`
   max-width: 100vw;
   overflow-x: hidden;
 
-  @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
     flex-flow: row nowrap;
   }
 `;
@@ -21,15 +20,15 @@ interface ColumnProps extends StyledSystem.ColorProps {
 }
 
 const sidePaddingToCenter = (theme: Theme) => {
-  return `((100vw - ${theme.sizes['section']}px)/2) + ${theme.space['large']}`;
+  return `((100vw - ${theme.sizes["section"]}px)/2) + ${theme.space["xLarge"]}`;
 };
 
 const columnWidth = (theme: Theme, columnSize: number, isEdge: boolean) => {
-  let contentWidth = `${theme.sizes['section'] * columnSize}px`;
+  let contentWidth = `${theme.sizes["section"] * columnSize}px`;
   let boxWidth = `${contentWidth}`;
 
   if (isEdge) {
-    return `${boxWidth} + (100vw - ${theme.sizes['section']}px)/2`;
+    return `${boxWidth} + (100vw - ${theme.sizes["section"]}px)/2`;
   } else {
     return `${boxWidth}`;
   }
@@ -39,25 +38,38 @@ export const FullColumn = styled.div<ColumnProps>`
   width: 100%;
   box-sizing: border-box;
   flex-shrink: 0;
-  padding: ${({ theme }) => theme.space.large} ${({ theme }) => theme.space.medium};
+  padding: ${({ theme }) => theme.space.large} ${({ theme }) =>
+  theme.space.medium};
 
   ${color}
 
-  ${({ columnOrder }) => (columnOrder) ? `order: ${columnOrder};` : ''}
+  ${({ columnOrder }) => (columnOrder ? `order: ${columnOrder};` : "")}
+
+  @media (min-width: ${({ theme }) => theme.breakpoints.medium}) {
+    width: ${({ largeWidth }) => largeWidth * 100}%;
+    order: inherit;
+    padding: ${({ theme }) => theme.space.xLarge} ${({ theme }) =>
+  theme.space.large};
+  }
 
   @media (min-width: ${({ theme }) => theme.breakpoints.large}) {
-    width: calc(${({ theme, largeWidth }) => columnWidth(theme, largeWidth, false)});
+    width: calc(${({ theme, largeWidth }) =>
+      columnWidth(theme, largeWidth, false)});
     order: inherit;
+    padding-top: ${({ theme }) => theme.space.xxLarge};
+    padding-bottom: ${({ theme }) => theme.space.xxLarge};
     
     &:first-child {
-      width: calc(${({ theme, largeWidth }) => columnWidth(theme, largeWidth, true)});
+      width: calc(${({ theme, largeWidth }) =>
+        columnWidth(theme, largeWidth, true)});
       padding-left: calc(${({ theme }) => sidePaddingToCenter(theme)});
-      padding-right: ${({ theme }) => theme.space.large};
+      padding-right: ${({ theme }) => theme.space.xLarge};
     }
     &:last-child {
-      width: calc(${({ theme, largeWidth }) => columnWidth(theme, largeWidth, true)});
+      width: calc(${({ theme, largeWidth }) =>
+        columnWidth(theme, largeWidth, true)});
       padding-right: calc(${({ theme }) => sidePaddingToCenter(theme)});
-      padding-left: ${({ theme }) => theme.space.large};
+      padding-left: ${({ theme }) => theme.space.xLarge};
     }
   }
 `;

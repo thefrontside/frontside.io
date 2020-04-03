@@ -1,14 +1,13 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { StaticQuery, graphql } from 'gatsby';
+import React from "react";
+import Helmet from "react-helmet";
+import { StaticQuery, graphql } from "gatsby";
 
-import { ThemeProvider } from '../../style';
+import { ThemeProvider } from "../style";
 
-// import '../_variables.css';
 import "syntax-highlighting/assets/css/prism/prism-base16-ateliersulphurpool.light.css";
 
-import Navbar from '../navbar';
-import Footer from '../footer';
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 export default function TemplateWrapper({ children }) {
   return (
@@ -17,8 +16,8 @@ export default function TemplateWrapper({ children }) {
         query HeadingQuery {
           site {
             siteMetadata {
-              title,
-              description,
+              title
+              description
             }
           }
         }
@@ -28,12 +27,15 @@ export default function TemplateWrapper({ children }) {
           <Helmet>
             <html lang="en" />
             <title>{data.site.siteMetadata.title}</title>
-            <meta name="description" content={data.site.siteMetadata.description} />
+            <meta
+              name="description"
+              content={data.site.siteMetadata.description}
+            />
           </Helmet>
           <ThemeProvider>
-            <Navbar/>
+            <Navbar />
             {children}
-            <Footer/>
+            <Footer />
           </ThemeProvider>
         </main>
       )}

@@ -1,11 +1,13 @@
-import styled from 'styled-components';
-import StyledSystem, { compose, color, typography } from 'styled-system';
+import styled from "styled-components";
+import StyledSystem, { compose, color, typography } from "styled-system";
 
-export interface TextProps extends StyledSystem.ColorProps, StyledSystem.TypographyProps {
+export interface TextProps
+  extends StyledSystem.ColorProps,
+    StyledSystem.TypographyProps {
   as?: React.ElementType;
 }
 
-const Text = styled.p<TextProps>`
+export const Text = styled.p<TextProps>`
   font-size: ${({ theme }) => theme.fontSizes.medium};
   margin-bottom: ${({ theme }) => theme.space.medium};
   ${compose(color, typography)}
