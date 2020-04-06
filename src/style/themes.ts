@@ -24,6 +24,7 @@ interface ColorTheme {
   disabled: CSS.ColorProperty;
   footer: CSS.ColorProperty;
   subtleBackground: CSS.ColorProperty;
+  overDark: CSS.ColorProperty;
 }
 
 export interface Theme extends Commons {
@@ -44,6 +45,7 @@ const LightTheme: Theme = {
     disabled: '#C0C0C0',
     footer: '#E7EAEE',
     subtleBackground: '#f3fdff',
+    overDark: '#ffffff',
   },
 };
 
@@ -60,6 +62,7 @@ const DarkTheme: Theme = {
     disabled: '#C0C0C0',
     footer: '#E7EAEE',
     subtleBackground: '#171d26',
+    overDark: '#ffffff',
   },
 };
 

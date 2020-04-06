@@ -92,7 +92,7 @@ const VerticalCenteredColumn = styled(FullColumn)`
 `;
 
 const AsideText = styled.p`
-  color: white;
+  color: ${({ theme }) => theme.colors.overDark};
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: ${({ theme }) => theme.fontWeights.light};
   line-height: ${({ theme }) => theme.lineHeights.body};
@@ -102,12 +102,12 @@ const AsideText = styled.p`
 `;
 
 const AsideLink = styled(Link)`
-  color: white;
+  color: ${({ theme }) => theme.colors.overDark};
   font-family: ${({ theme }) => theme.fonts.heading};
   font-weight: ${({ theme }) => theme.fontWeights.bold};
   font-size: ${({ theme }) => theme.fontSizes.xSmall};
   padding-bottom: ${({ theme }) => theme.space.xSmall};
-  border-bottom: 1px dotted white;
+  border-bottom: 1px dotted ${({ theme }) => theme.colors.overDark};
 `;
 
 const ContactPerson = styled.div`
@@ -182,7 +182,7 @@ export default function Services() {
             and provide them with custom-tailored tooling so they can deliver
             quality software consistently.
           </ServiceText>
-          <ArrowLink to="/">
+          <ArrowLink to="/services/delivery-pipeline-optimization">
             How we help teams ship great applications
           </ArrowLink>
         </VerticalCenteredColumn>
